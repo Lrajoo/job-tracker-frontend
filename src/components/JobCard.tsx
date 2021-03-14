@@ -10,7 +10,7 @@ interface JobCardProps {
 class JobCard extends Component<JobCardProps> {
   render() {
     return (
-      <Card onClick={() => {}} bordered={false} style={{ margin: '10px', borderRadius: '5px' }}>
+      <Card bordered={false} style={{ margin: '10px', borderRadius: '5px' }}>
         <Row justify="end">
           <Col>
             <h6>{this.props.rating}</h6>
@@ -18,7 +18,7 @@ class JobCard extends Component<JobCardProps> {
         </Row>
         <Row>
           <Col span={8}>
-            <img src={this.props.logo} style={{ height: '40px' }} />
+            <img src={this.props.logo} alt="logo" style={{ height: '40px' }} />
           </Col>
           <Col span={16}>{this.props.content}</Col>
         </Row>

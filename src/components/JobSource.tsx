@@ -19,7 +19,7 @@ class JobSource extends Component {
               <Row>
                 {jobSources.map(source => {
                   return (
-                    <Col span={8}>
+                    <Col span={8} key={source.source}>
                       <NavLink to={`/jobs/${source.source}`}>
                         <JobCard rating={source.rating} logo={source.logo} content={source.content}></JobCard>
                       </NavLink>
