@@ -1,7 +1,7 @@
 const columns = [
   {
     title: 'ID',
-    dataIndex: 'ID',
+    dataIndex: '_id',
     key: 'ID'
   },
   {

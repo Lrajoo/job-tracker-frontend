@@ -18,7 +18,9 @@ class JobCard extends Component<JobCardProps> {
         </Row>
         <Row>
           <Col span={8}>
-            <img src={this.props.logo} alt="logo" style={{ height: '40px' }} />
+            <Row justify="center">
+              <img src={this.props.logo} alt="logo" style={{ height: '40px' }} />
+            </Row>
           </Col>
           <Col span={16}>{this.props.content}</Col>
         </Row>
