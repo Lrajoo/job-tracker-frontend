@@ -15,7 +15,7 @@ class JobSourceViewModel {
 
   @action
   getJobBoards = async () => {
-    const { data } = await axios.get('http://localhost:3000/boards');
+    const { data } = await axios.get('https://jobtracker-backend.herokuapp.com/boards');
     this.boards = data;
   };
 }

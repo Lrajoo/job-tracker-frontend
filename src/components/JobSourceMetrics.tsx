@@ -18,12 +18,12 @@ class JobSourceMetricsViewModel {
 
   @action
   getJobBoards = async () => {
-    const { data } = await axios.get('http://localhost:3000/boards');
+    const { data } = await axios.get('https://jobtracker-backend.herokuapp.com/boards');
     this.boards = data;
   };
 
   getJobOpportunities = async (source: string) => {
-    const { data } = await axios.get(`http://localhost:3000/opportunities/${source}`);
+    const { data } = await axios.get(`https://jobtracker-backend.herokuapp.com/opportunities/${source}`);
     return data.length;
   };
 

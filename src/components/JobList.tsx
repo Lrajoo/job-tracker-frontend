@@ -17,7 +17,7 @@ class JobListViewModel {
 
   @action
   getJobs = async (source: string) => {
-    const { data } = await axios.get(`http://localhost:3000/opportunities/${source}`);
+    const { data } = await axios.get(`https://jobtracker-backend.herokuapp.com/opportunities/${source}`);
     this.jobs = data;
   };
 
