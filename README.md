@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+## Job Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Production URL : [https://master.dk46b70snttgs.amplifyapp.com](https://master.dk46b70snttgs.amplifyapp.com)
 
-## Available Scripts
+## Description (a)
 
-In the project directory, you can run:
+This app displays a list cards showing the current job boards in the market with the job board logo, description and rating.
+Upon clicking on a job board, user will be directed to page showing a table listing all the opportunities available through that job board.
+Each record has the listed fields ID, Job Title, Company Name, Job URL. User can view the job source metrics as well, the table display each job board along with the number of opportunities that exist. The backend reads the CSV file containing 20,000 records and resolves the source based on the company name, job URL and job board name. All strings are converted to lower case before checking. Each opportunity will check if it is a company website but a job board will take precedence, if unable to determine a source, unknown is assigned.
 
-### `yarn start`
+## Source resolution (b)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+job-tracker-backend/src/util/jobSourceResolver.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Check if the company name exists in the job URL,
+Yes => then it checks if any of the job board names exists in the job URL
+Yes => source is the job board
+No => source is the company website
+No => check if the job board name exists in the job URL
+Yes => source is the job board
+No => source is Unknown
 
-### `yarn test`
+Resolver code: [https://github.com/Lrajoo/job-tracker-backend/blob/main/src/util/jobSourceResolver.js](https://github.com/Lrajoo/job-tracker-backend/blob/main/src/util/jobSourceResolver.js)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies (c)
 
-### `yarn build`
+Frontend
+Framework: React
+Router: react-router-dom
+State Management: MobX
+UI Framework: Ant Design
+HTTP client: Axios
+Deployment: AWS Amplify
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Backend
+Framework: Express
+Database: MongoDB
+CSV Parser: csv-parser
+Deployment: Heroku
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Production URL (d)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Home URL : [https://master.dk46b70snttgs.amplifyapp.com](https://master.dk46b70snttgs.amplifyapp.com)
 
-### `yarn eject`
+## Procssed CSV structed (e)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Google Drive Link: [https://drive.google.com/file/d/1mKgV182biLO5OsY1yOgjcTBR9TvZGKm5/view?usp=sharing](https://drive.google.com/file/d/1mKgV182biLO5OsY1yOgjcTBR9TvZGKm5/view?usp=sharing)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Job Opportunity Metrics (f)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Metrics URL : [https://master.dk46b70snttgs.amplifyapp.com/metrics](https://master.dk46b70snttgs.amplifyapp.com/metrics)
