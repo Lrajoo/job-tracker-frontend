@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import JobSource from './components/JobSource';
 import JobList from './components/JobList';
 import { Layout } from 'antd';
+import JobSourceMetrics from './components/JobSourceMetrics';
 const { Content } = Layout;
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
             </Route>
             <Route path="/jobs/:source" exact>
               <JobList />
+            </Route>
+            <Route path="/metrics" exact>
+              <JobSourceMetrics />
             </Route>
           </Switch>
         </Content>

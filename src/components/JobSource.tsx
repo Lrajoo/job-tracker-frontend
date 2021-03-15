@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
 import JobCard from './JobCard';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
@@ -32,8 +32,15 @@ class JobSource extends Component {
       <Row>
         <Col span={24}>
           <Row style={{ marginTop: '20px', marginLeft: '20px', marginRight: '20px' }}>
-            <Col span={24}>
+            <Col span={12}>
               <h1>Job Sources</h1>
+            </Col>
+            <Col span={12}>
+              <Row justify="end">
+                <NavLink to="/metrics">
+                  <Button>Job Source Metrics</Button>
+                </NavLink>
+              </Row>
             </Col>
           </Row>
           <Row>
